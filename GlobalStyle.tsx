@@ -146,38 +146,6 @@ const GlobalStyle = () => (
 			input[type='password']::placeholder {
 				font-family: 'Nanum';
 			}
-			/* @font-face {
-        font-family: 'Nanum';
-        src: url('./src/assets/fonts/Nanum.ttf') format('truetype'), url('./src/assets/fonts/Nanum.woff') format('woff'),
-          url('./src/assets/fonts/Nanum.eot?iefix') format('embedded-opentype');
-        font-weight: 400;
-        font-style: normal;
-      }
-      @font-face {
-        font-family: 'Jalnan';
-        src: url('./src/assets/fonts/Jalnan.ttf') format('truetype'),
-          url('./src/assets/fonts/Jalnan.woff') format('woff'),
-          url('./src/assets/fonts/Jalnan.eot?iefix') format('embedded-opentype');
-        font-weight: 400;
-        font-style: normal;
-      } */
-			@media (min-width: 768px) {
-				font-size: 62.5%;
-			}
-			@media (min-width: 1024px) {
-				width: 40%;
-			}
-			@media screen and (min-width: 768px) {
-				html {
-					/* font-size: 62.5%; */
-					font-size: 62.5%;
-				}
-			}
-			@media screen and (min-width: 1024px) {
-				html {
-					font-size: 75%;
-				}
-			}
 		`}
 	/>
 );

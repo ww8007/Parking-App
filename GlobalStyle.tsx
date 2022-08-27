@@ -92,14 +92,14 @@ const GlobalStyle = () => (
 				border: 0;
 				font-size: 100%;
 				font: inherit;
-				font-family: 'Nanum';
+				font-family: 'apple';
 				vertical-align: baseline;
 				box-sizing: border-box;
 				-webkit-tap-highlight-color: transparent;
 			}
 			html {
-				font-size: 62.5%;
-				font-family: 'Nanum';
+				font-size: 100%;
+				font-family: 'apple';
 				body {
 					font-size: 1.6rem;
 				}
@@ -137,14 +137,33 @@ const GlobalStyle = () => (
 				color: inherit;
 				-webkit-tap-highlight-color: transparent;
 			}
+			@font-face {
+				font-family: 'BCcard';
+				src: url('/fonts/BCcard.ttf') format('truetype');
+				font-weight: normal;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: 'GodoR';
+				src: url('/fonts/GodoR.ttf') format('truetype');
+				font-weight: normal;
+				font-style: normal;
+			}
+			@font-face {
+				font-family: 'apple';
+				src: url('/fonts/apple.ttf') format('truetype');
+				font-weight: normal;
+				font-style: normal;
+			}
+			@import url(//db.onlinewebfonts.com/c/67680f2eb947c5cbd58b40961b4a61e9?family=Apple+SD+Gothic+Neo);
 			input {
 				outline: none;
 			}
 			input[type='password'] {
-				font-family: 'Jalnan';
+				font-family: 'apple';
 			}
 			input[type='password']::placeholder {
-				font-family: 'Nanum';
+				font-family: 'apple';
 			}
 		`}
 	/>

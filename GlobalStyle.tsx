@@ -1,4 +1,5 @@
 import { Global, css } from '@emotion/react';
+import colors from './src/constants/colors';
 
 const GlobalStyle = () => (
 	<Global
@@ -100,8 +101,10 @@ const GlobalStyle = () => (
 			html {
 				font-size: 100%;
 				font-family: 'apple';
+				background-color: ${colors.mainColor};
 				body {
 					font-size: 1.6rem;
+					padding-top: 10rem; // 헤더 높이만큼 여백부여
 				}
 			}
 			ol,
@@ -155,7 +158,13 @@ const GlobalStyle = () => (
 				font-weight: normal;
 				font-style: normal;
 			}
-			@import url(//db.onlinewebfonts.com/c/67680f2eb947c5cbd58b40961b4a61e9?family=Apple+SD+Gothic+Neo);
+			@font-face {
+				font-family: 'appleB';
+				src: url('/fonts/appleB.ttf') format('truetype');
+				font-weight: normal;
+				font-style: normal;
+			}
+
 			input {
 				outline: none;
 			}

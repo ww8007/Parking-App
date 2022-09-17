@@ -1,8 +1,10 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
-import { GoogleAuthProvider } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { getApp as _getApp, getApps, initializeApp } from 'firebase/app';
+import { getAuth as _getAuth, GoogleAuthProvider } from 'firebase/auth';
+import {
+	enableIndexedDbPersistence,
+	getFirestore as _getFirestore
+} from 'firebase/firestore';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -19,17 +21,24 @@ const firebaseConfig = {
 	measurementId: process.env.NEXT_PUBLIC_MEASUREMENTID
 };
 
+const firebaseIsRunning = () => !!getApps().length;
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export function getApp() {
+	if (!firebaseIsRunning()) initializeApp(firebaseConfig);
 
-let analytics;
+	return _getApp();
+}
 
-if (app.name && typeof window !== 'undefined') {
-	analytics = getAnalytics(app);
+export function getFirestore() {
+	const isRunning = firebaseIsRunning();
+	if (!isRunning) getApp();
+
+	const db = _getFirestore();
+
+	if (!isRunning)
+		if (typeof window !== undefined) enableIndexedDbPersistence(db);
+
+	return db;
 }
 
 const provider = new GoogleAuthProvider();
-
-const db = getFirestore(app);
-
-export { app, analytics, provider, db };
